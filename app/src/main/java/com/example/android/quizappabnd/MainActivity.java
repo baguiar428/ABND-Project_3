@@ -1,3 +1,4 @@
+
 package com.example.android.quizappabnd;
 
 import android.support.v7.app.AppCompatActivity;
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
         score = question1Score + question2Score + checkBoxScore + question5Score + question6Score;
 
-        Toast.makeText(this, "Hello, " + nameText + "\nYou scored " + score + " out of 8 points!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Hello, " + nameText + "\nYou scored " + score + " out of 6 points!", Toast.LENGTH_LONG).show();
     }
 
     /**
@@ -147,39 +148,13 @@ public class MainActivity extends AppCompatActivity {
                                         boolean addSugar, boolean addProtein) {
         int checkBoxPoints = 0;
 
-        if (addFadDiets) {
-//            Incorrect answer - Don't count
-        }
-
-        if (addCalorieDeficit) {
+        if (addExercise && addCalorieDeficit && !addFadDiets && !addBodyWraps) {
             checkBoxPoints += 1;
         }
 
-        if (addBodyWraps) {
-//            Incorrect answer - Don't count
-        }
-
-        if (addExercise) {
+        if (addRest && addProtein && !addSugar && !addGatorade) {
             checkBoxPoints += 1;
         }
-        if (addRest) {
-            checkBoxPoints += 1;
-        }
-
-        if (addGatorade) {
-//            Incorrect answer - Don't count
-        }
-
-        if (addSugar) {
-//            Incorrect answer - Don't count
-        }
-
-        if (addProtein) {
-            checkBoxPoints += 1;
-        } else {
-//            Incorrect answer - Don't count
-        }
-
         return checkBoxPoints;
     }
 
